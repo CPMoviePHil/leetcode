@@ -14,8 +14,16 @@ def reverse(my_integer):
     temp_dict.append(quotient)
     for value in temp_dict:
         reversed_number += str(value)
-    return int(reversed_number)
+    if is_negative:
+        if int(reversed_number) < -2**31:
+            return 0
+        else:
+            return int(reversed_number)
+    else:
+        if int(reversed_number) > 2**31-1:
+            return 0
+        else:
+            return int(reversed_number)
 
 
-print(reverse(12345))
-print(reverse(-123456))
+print(reverse(123456789))

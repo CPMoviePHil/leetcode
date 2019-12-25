@@ -29,5 +29,6 @@ def reverse(my_integer):
             return int(reversed_number)
 
 
-print(reverse(-123))
+print(reverse(12345678))
+
 
