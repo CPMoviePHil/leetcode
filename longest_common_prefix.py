@@ -1,20 +1,25 @@
-def longest_common_prefix(my_list):
-    len_strs = len(my_list)
-    least_len = {'length': len(my_list[0]), 'index':0}
+def longest_common_prefix(strs):
+    len_strs = len(strs)
     prefix = ''
-    counter = 0
-    for index, value in enumerate(my_list):
+    if not strs:
+        return prefix
+    least_len = {'length': len(my_list[0]), 'index':0}
+    for index, value in enumerate(strs):
         if least_len['length'] > len(value):
             least_len['length'] = len(value)
             least_len['index'] = index
-    while counter < len_strs:
-        for index, value in enumerate(my_list[least_len['index']]):
-            if value == my_list[counter][index]:
-                
-
-
-
-
+    for index, value in enumerate(strs[least_len['index']]):
+        counter = 0
+        times = 0
+        while counter < len_strs:
+            if value == strs[counter][index]:
+                times += 1
+            if times == len_strs:
+                prefix += value
+            counter += 1
+        if index == 0 and prefix == '':
+            return ''
+    return prefix
 
 
 my_list = ["flower","flow","flight"]
