@@ -12,7 +12,7 @@ def isValid(s):
             stack.append('(')
         elif value == '[':
             stack.append('[')
-        if stack:
+        elif stack:
             if value == ']':
                 if stack[-1] == '[':
                     stack.pop()
@@ -28,4 +28,4 @@ def isValid(s):
         return False
 
 
-print(isValid("[(])"))
+print(isValid("([]{})"))
