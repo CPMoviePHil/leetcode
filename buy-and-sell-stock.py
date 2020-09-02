@@ -14,5 +14,13 @@ def max_profit(prices):
     return profit
 
 
+def max_profit_2(prices):
+    profit = 0
+    for index, buy in enumerate(prices):
+        for sell in prices[index:]:
+            if sell - buy > 0:
+                profit = max(profit, sell - buy)
+    return profit
 
 print(max_profit([1,2,4]))
+print(max_profit_2([1,2,4]))
