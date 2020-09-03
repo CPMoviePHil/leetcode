@@ -8,7 +8,7 @@ def max_profit(prices):
         else:
             if profit == 0:
                 profit = prices[counter] + buy
-            elif profit > 0 and profit < prices[counter] + buy:
+            elif 0 < profit < prices[counter] + buy:
                 profit = prices[counter] + buy
         counter += 1
     return profit
